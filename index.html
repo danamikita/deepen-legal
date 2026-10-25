@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy &mdash; Deepen</title>
+<style>
+  :root {
+    --cream: #FBF8F2;
+    --sand: #E6DFCF;
+    --green: #4A6354;
+    --ink: #3A3630;
+    --ink-soft: #6b655b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  header {
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    color: var(--green);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin: 0 0 8px;
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+    color: var(--ink);
+  }
+  .updated {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .summary {
+    background: var(--sand);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .summary h2 {
+    margin-top: 0;
+    font-size: 1.05rem;
+    color: var(--green);
+  }
+  .summary ul {
+    margin: 0;
+    padding-left: 1.2em;
+  }
+  .summary li {
+    margin-bottom: 6px;
+  }
+  h2 {
+    color: var(--green);
+    font-size: 1.25rem;
+    margin-top: 2.4em;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--sand);
+    vertical-align: top;
+  }
+  th {
+    color: var(--green);
+    font-weight: 600;
+  }
+  a { color: var(--green); }
+  footer {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--sand);
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  code {
+    background: var(--sand);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Deepen</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 25, 2026</p>
+  </header>
+
+  <p>Deepen is an offline journaling app. This policy explains, plainly, what
+  happens to your data &mdash; the short version is: it stays on your phone.</p>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <ul>
+      <li>Everything you write stays on your device, encrypted, and is never uploaded anywhere.</li>
+      <li>Deepen has no account system, no server, and no backend of any kind for your journal content to be sent to &mdash; even if we wanted to collect it, there's nowhere for it to go.</li>
+      <li>The AI writing-prompt feature runs entirely on your device. Nothing you write is sent to us, to Google, or to anyone else for that feature to work.</li>
+      <li>We collect no analytics, no advertising data, and no crash reports.</li>
+      <li>We don't sell or share your data, because we don't have your data.</li>
+    </ul>
+  </div>
+
+  <h2>What's stored, and where</h2>
+  <table>
+    <tr><th>Data</th><th>Where it lives</th><th>Ever leaves your device?</th></tr>
+    <tr><td>Journal entries you write</td><td>Encrypted local database on your device</td><td>No</td></tr>
+    <tr><td>Mood tags you select</td><td>Encrypted local database on your device</td><td>No</td></tr>
+    <tr><td>AI prompt history (which question led to which sentence)</td><td>Encrypted local database on your device</td><td>No</td></tr>
+    <tr><td>App Lock on/off and timeout setting</td><td>Encrypted local storage on your device</td><td>No</td></tr>
+    <tr><td>Local usage counts (e.g. how many times you've used the AI-expand feature)</td><td>Plain local storage on your device</td><td>No</td></tr>
+  </table>
+
+  <p>Your journal database is encrypted at rest using SQLCipher with a randomly
+  generated key that itself is stored in your device's secure hardware-backed
+  keystore. Deepen also opts out of Android's automatic cloud backup for app
+  data, so your journal isn't even incidentally copied off your device that
+  way.</p>
+
+  <h2>The on-device AI feature</h2>
+  <p>When you tap &ldquo;Help me expand this,&rdquo; Deepen runs a small
+  language model (Gemma 3, via Google's LiteRT-LM runtime) directly on your
+  phone's hardware. Your journal text is read by that on-device model to
+  suggest a question &mdash; it is never transmitted over the network, to us,
+  to Google, or to anyone else, at any point in that process.</p>
+
+  <p>The model itself is a large file (~584MB) that your device downloads
+  once, on request, through Google Play's Asset Delivery service &mdash; the
+  same system Android uses to deliver app updates. That download transfers
+  only the model file; it does not include anything you've written. Google's
+  own Play Store services necessarily see standard delivery information (like
+  any app install or update) as part of operating that download &mdash;
+  that's Google acting as the platform, governed by Google's own privacy
+  policy, not something Deepen adds or has access to.</p>
+
+  <h2>App Lock (optional)</h2>
+  <p>If you turn on App Lock, Deepen asks Android's own biometric system to
+  confirm it's you &mdash; using your fingerprint, face, or device PIN. Deepen
+  never receives, sees, or stores your actual fingerprint, face data, or PIN;
+  the operating system handles that entirely on its own secure hardware and
+  only tells Deepen &ldquo;yes&rdquo; or &ldquo;no.&rdquo;</p>
+
+  <h2>Permissions Deepen uses</h2>
+  <ul>
+    <li><strong>Internet</strong> &mdash; used only for the one-time, user-initiated download of the on-device AI model described above. Never used automatically, never used to transmit your journal content.</li>
+    <li><strong>Biometric permissions</strong> &mdash; used only for the optional App Lock feature described above, and only when you turn it on.</li>
+  </ul>
+  <p>Deepen's AI-download component also carries a small number of permissions
+  (background-service, network-state, and boot-related permissions) that come
+  from Google's Play Asset Delivery library itself, so a model download can
+  resume reliably after you close the app or restart your phone. These exist
+  to manage that one-time file download; they are not used to collect or
+  transmit any personal or journal data.</p>
+
+  <h2>Children's privacy</h2>
+  <p>Deepen is not directed at children and does not knowingly collect any
+  information from anyone, regardless of age &mdash; because Deepen does not
+  collect information from anyone, full stop.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy ever changes, the update will be posted here with a new
+  &ldquo;Last updated&rdquo; date.</p>
+
+  <footer>
+    Questions about this policy can be sent to
+    <a href="mailto:mikitad@gmail.com">mikitad@gmail.com</a>.
+  </footer>
+</div>
+</body>
+</html>
